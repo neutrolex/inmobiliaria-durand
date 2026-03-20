@@ -1,60 +1,52 @@
+/* Paleta de Colores Lujo */
 :root {
-    --primary-color: #1a2a6c; /* Azul corporativo */
-    --accent-color: #f2a900;  /* Dorado inmobiliario */
-    --text-dark: #333;
-    --light-bg: #f4f4f4;
+    --primary: #0f172a;    /* Navy Deep */
+    --accent: #c5a059;     /* Gold Bronze */
+    --secondary: #64748b;  /* Slate */
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    line-height: 1.6;
-}
-
-header {
-    background: var(--primary-color);
-    color: white;
-    padding: 1rem 5%;
+/* Hero Section con Overlay */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
+                url('/static/web/img/hero-bg.jpg') center/cover;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    position: sticky;
-    top: 0;
+    color: var(--white);
+    text-align: center;
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
+.hero h1 { font-size: 3.5rem; margin-bottom: 1rem; letter-spacing: -1px; }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 2rem;
-}
-
-/* Grid para Servicios */
-.services-grid {
+/* Cards de Propiedades */
+.property-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 50px 5%;
 }
 
-.service-card {
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
-    transition: transform 0.3s;
+.property-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: 0.4s;
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.property-card:hover { transform: translateY(-10px); }
+
+.property-info { padding: 20px; }
+.price { color: var(--accent); font-size: 1.5rem; font-weight: bold; }
+
+/* Testimonios Slider (Simulado) */
+.testimonio-section {
+    background: var(--primary);
+    color: white;
+    padding: 80px 5%;
+    text-align: center;
 }

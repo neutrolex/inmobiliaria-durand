@@ -1,32 +1,22 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inmobiliaria Durand | Expertos en Propiedades</title>
-    <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">Inmobiliaria Durand</div>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+{% extends 'web/base.html' %}
+{% block content %}
+<section class="hero">
+    <h1>Inmobiliaria Durand</h1>
+    <p>Encontramos el lugar donde tu historia comienza.</p>
+    <a href="{% url 'contacto' %}" class="btn-primary">Asesoría Gratuita</a>
+</section>
 
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Inmobiliaria Durand - Todos los derechos reservados.</p>
-    </footer>
-</body>
-</html>
+<section class="container">
+    <h2 class="section-title">Propiedades Destacadas</h2>
+    <div class="property-grid">
+        <div class="property-card">
+            <div class="property-info">
+                <span class="badge">Venta</span>
+                <h3>Penthouse en Miraflores</h3>
+                <p class="price">$450,000</p>
+                <div class="icons">🛏️ 3 | 🚿 2 | 📏 120m²</div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
