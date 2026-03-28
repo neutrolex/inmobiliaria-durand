@@ -1,22 +1,20 @@
 {% extends 'web/base.html' %}
-{% block content %}
-<section class="hero">
-    <h1>Inmobiliaria Durand</h1>
-    <p>Encontramos el lugar donde tu historia comienza.</p>
-    <a href="{% url 'contacto' %}" class="btn-primary">Asesoría Gratuita</a>
-</section>
+{% block title %}Inmobiliaria Durand — Propiedades de Lujo en Lima{% endblock %}
 
-<section class="container">
-    <h2 class="section-title">Propiedades Destacadas</h2>
-    <div class="property-grid">
-        <div class="property-card">
-            <div class="property-info">
-                <span class="badge">Venta</span>
-                <h3>Penthouse en Miraflores</h3>
-                <p class="price">$450,000</p>
-                <div class="icons">🛏️ 3 | 🚿 2 | 📏 120m²</div>
-            </div>
-        </div>
-    </div>
-</section>
+{% block content %}
+
+    {% include 'web/components/_hero.html' %}
+    
+    {% include 'web/components/_nosotros.html' %}
+    
+    {% include 'web/components/_valores.html' %}
+    
+    {% include 'web/components/_servicios.html' %}
+    
+    {% include 'web/components/_proceso.html' %}
+    
+    {% include 'web/components/_testimonios.html' %}
+    
+    {% include 'web/components/_cta.html' %}
+
 {% endblock %}

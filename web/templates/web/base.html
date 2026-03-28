@@ -3,12 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Inmobiliaria Durand{% endblock %}</title>
+    <title>{% block title %}Mobiliaria Durand — Muebles en Melamina{% endblock %}</title>
     {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
+    {% block extra_css %}{% endblock %}
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+
+    <!-- NAV -->
+    <nav class="nav" id="mainNav">
+        <a href="{% url 'home' %}" class="nav-logo">
+            <div class="nav-logo-box">
+                <span class="main">M DURAND S.A.C</span>
+                <span class="sub">MOBILIARIA</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'home' %}#nosotros">Nosotros</a></li>
+            <li><a href="{% url 'home' %}#servicios">Servicios</a></li>
+            <li><a href="{% url 'contacto' %}" class="btn-nav">📞 Contáctanos</a></li>
+        </ul>
+        <div class="nav-hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <span class="logo">Mobiliaria Durand</span>
+                <p>Empresa peruana dedicada a la fabricación de muebles en melamina. Calidad, diseño a medida y durabilidad para equipar tus espacios corporativos o de hogar.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <a href="{% url 'home' %}">Inicio</a>
+                <a href="{% url 'home' %}#nosotros">Nosotros</a>
+                <a href="{% url 'home' %}#servicios">Servicios</a>
+            </div>
+            <div class="footer-col">
+                <h4>Servicios</h4>
+                <a href="#">Compra y Venta</a>
+                <a href="#">Alquiler</a>
+                <a href="#">Asesoría Legal</a>
+                <a href="#">Tasaciones</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <a href="#">📍 Miraflores, Lima</a>
+                <a href="tel:+51996717836">📞 +51 996 717 836</a>
+                <a href="mailto:mobiliariadurand@hotmail.com">✉️ mobiliariadurand@hotmail.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Mobiliaria Durand SAC. Todos los derechos reservados.</span>
+            <div class="social-links">
+                <a href="#" class="social-link">in</a>
+                <a href="#" class="social-link">ig</a>
+                <a href="#" class="social-link">fb</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Nav scroll effect
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.12 });
+        reveals.forEach(el => observer.observe(el));
+    </script>
+
+    {% block extra_js %}{% endblock %}
 </body>
 </html>

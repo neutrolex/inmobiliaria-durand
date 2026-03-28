@@ -1,0 +1,53 @@
+<!-- ==================== TESTIMONIOS ==================== -->
+<section class="testimonios-section">
+    <div class="section-header reveal">
+        <span class="section-tag">Testimonios</span>
+        <h2>Lo que dicen<br><em>nuestros clientes</em></h2>
+        <div class="section-divider"></div>
+    </div>
+    <div class="testimonios-grid">
+        {% for t in testimonios %}
+        <div class="testimonio-card reveal reveal-delay-{{ forloop.counter }}">
+            <div class="stars">★★★★★</div>
+            <div class="testimonio-quote">"</div>
+            <p class="testimonio-text">{{ t.comentario }}</p>
+            <div class="testimonio-author">
+                <div class="testimonio-avatar">{{ t.nombre|first }}</div>
+                <div>
+                    <h4>{{ t.nombre }}</h4>
+                    <span>{{ t.cargo }}</span>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <!-- Testimonios de muestra -->
+        <div class="testimonio-card reveal reveal-delay-1">
+            <div class="stars">★★★★★</div>
+            <div class="testimonio-quote">"</div>
+            <p class="testimonio-text">Renovaron por completo nuestra sala de reuniones con una mesa central impecable. Cumplieron exactamente con la fecha prometida de entrega.</p>
+            <div class="testimonio-author">
+                <div class="testimonio-avatar">M</div>
+                <div><h4>María Fernández</h4><span>Gerente Administrativa</span></div>
+            </div>
+        </div>
+        <div class="testimonio-card reveal reveal-delay-2">
+            <div class="stars">★★★★★</div>
+            <div class="testimonio-quote">"</div>
+            <p class="testimonio-text">Necesitábamos estanterías metálicas de alta resistencia para nuestro almacén. El nivel de acabados y solidez final superó nuestras expectativas ampliamente.</p>
+            <div class="testimonio-author">
+                <div class="testimonio-avatar">C</div>
+                <div><h4>Carlos Mendoza</h4><span>Jefe de Operaciones</span></div>
+            </div>
+        </div>
+        <div class="testimonio-card reveal reveal-delay-3">
+            <div class="stars">★★★★★</div>
+            <div class="testimonio-quote">"</div>
+            <p class="testimonio-text">Diseñaron el mobiliario de mi nuevo departamento a medida. Los módulos de la cocina en melamina brillante quedaron espectaculares.</p>
+            <div class="testimonio-author">
+                <div class="testimonio-avatar">A</div>
+                <div><h4>Ana Villanueva</h4><span>Propietaria Residente</span></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
